@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PID_API_App.MainMenu"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="White">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="250"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <ImageButton x:Name="btn_questionmark" Grid.Column="2" Grid.Row="0" HorizontalOptions="End" VerticalOptions="Start" Source="Questionmark.png" BackgroundColor="White" Padding="0,7,7,0" Clicked="btn_questionmark_Clicked"/>
+        <Image Grid.Column="1" Grid.Row="1" Source="Logo.png" WidthRequest="250"/>
+        <Button x:Name="btn_buses" Grid.Column="1" Grid.Row="3" Text="AUTOBUSY" FontSize="20" FontAttributes="Bold" TextColor="#d63422" ImageSource="bus.png" CornerRadius="15" BorderColor="#d63422" BorderWidth="2" BackgroundColor="White" Clicked="btn_buses_Clicked"/>
+        <Button x:Name="btn_trams" Grid.Column="1" Grid.Row="5" Text="TRAMVAJE" FontSize="20" FontAttributes="Bold" TextColor="#d63422" ImageSource="tram.png" CornerRadius="15" BorderColor="#d63422" BorderWidth="2" BackgroundColor="White" Clicked="btn_trams_Clicked"/>
+        <Button x:Name="btn_trains" Grid.Column="1" Grid.Row="7" Text="VLAKY" FontSize="20" FontAttributes="Bold" TextColor="#d63422" ImageSource="train.png" CornerRadius="15" BorderColor="#d63422" BorderWidth="2" BackgroundColor="White" Clicked="btn_trains_Clicked"/>
+        <Button x:Name="btn_others" Grid.Column="1" Grid.Row="9" Text="OSTATNÍ" FontSize="20" FontAttributes="Bold" TextColor="#d63422" ImageSource="kotva.png" CornerRadius="15" BorderColor="#d63422" BorderWidth="2" BackgroundColor="White" Clicked="btn_others_Clicked"/>
+        <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="11" Text="© Albert Roučka" VerticalTextAlignment="End" TextColor="Black" Margin="5,0,0,5"/>
+        <Label Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="11" Text="ver. 1.0" HorizontalTextAlignment="End" VerticalTextAlignment="End" TextColor="Black" Margin="0,0,5,5"/>
+
+    </Grid>
+</ContentPage>

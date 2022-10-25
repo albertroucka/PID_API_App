@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PID_API_App.Splashscreen"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="White">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="250"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Grid.Column="1" Grid.Row="1" Source="Logo.png" WidthRequest="250"/>
+        <Label Grid.Column="1" Grid.Row="3" Text="Chyba sítě. Zkontrolujte své internetové připojení" FontSize="20" TextColor="#d63422" HorizontalTextAlignment="Center"/>
+        <Button x:Name="btn_connection" Grid.Column="1" Grid.Row="5" Text="Zkusit znovu" FontSize="20" FontAttributes="Bold" TextColor="#d63422" CornerRadius="15" BorderColor="#d63422" BorderWidth="2" BackgroundColor="White" Clicked="btn_connection_Clicked"/>
+
+    </Grid>
+</ContentPage>

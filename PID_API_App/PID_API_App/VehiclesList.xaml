@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PID_API_App.VehiclesList"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="White">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="336"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label x:Name="lb_typeOfVehicle" Grid.Column="1" Grid.Row="0" Text="TYP DOPRAVY" FontSize="35" TextTransform="Uppercase" TextColor="{Binding VehicleColor}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+            </Label.GestureRecognizers>
+        </Label>
+        <Label x:Name="lb_lastUpdate" Grid.Column="1" Grid.Row="1" HorizontalTextAlignment="Center" Text="Poslední aktualizace: neznámá" TextColor="Gray"/>
+        <Entry x:Name="entry_searchbar" Grid.Column="1" Grid.Row="2" Placeholder="vyhledávání" PlaceholderColor="Gray" TextColor="Gray" TextChanged="entry_searchbar_TextChanged" Margin="33,0,33,0"/>
+        <Label Grid.Column="1" Grid.Row="3" Text="Linka" VerticalTextAlignment="End" TextColor="Black"/>
+        <Label Grid.Column="1" Grid.Row="3" Text="Dopravce" VerticalTextAlignment="End" TextColor="Black" Margin="55,0,0,0"/>
+        <Label Grid.Column="1" Grid.Row="3" Text="PV" VerticalTextAlignment="End" HorizontalOptions="End" TextColor="Black" Margin="0,0,87,0"/>
+        <Label Grid.Column="1" Grid.Row="3" Text="Prům. zpož." VerticalTextAlignment="End" HorizontalOptions="End" TextColor="Black"/>
+        <ListView x:Name="lv_allSortedLines" Grid.Column="1" Grid.Row="4" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="47"/>
+                                    <ColumnDefinition Width="168"/>
+                                    <ColumnDefinition Width="24"/>
+                                    <ColumnDefinition Width="86"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Text="{Binding LineNumber}" FontSize="20" HorizontalTextAlignment="Start" TextColor="{Binding VehicleColor}"/>
+                                <Label Grid.Column="1" Text="{Binding AgencyName}" FontSize="20" HorizontalTextAlignment="Start" TextColor="Black"/>
+                                <Label Grid.Column="2" Text="{Binding NumberOfVehicles}" FontSize="20" HorizontalTextAlignment="Center" TextColor="Black"/>
+                                <Label Grid.Column="3" Text="{Binding AverageDelay}" FontSize="20" HorizontalTextAlignment="Center" TextColor="{Binding DelayColor}" />
+                            </Grid>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </Grid>
+</ContentPage>
