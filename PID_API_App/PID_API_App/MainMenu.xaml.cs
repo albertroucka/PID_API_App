@@ -49,5 +49,10 @@ namespace PID_API_App
 
 Pro zobrazení Regionálních autobusů (linky číslo 300+) vyberte v hlavním menu možnost Autobusy a poté klikněte na nadpis (AUTOBUSY) v horní části stránky - seznam se aktualizuje a nadpis se změní. Stejným způsobem se vrátíte zpět na městské autobusové linky.", "Ok");
         }
+
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
+        }
     }
 }
