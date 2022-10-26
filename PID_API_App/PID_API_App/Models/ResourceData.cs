@@ -287,7 +287,7 @@ namespace PID_API_App.Models
         private Color VehicleTypeColor(string vehicleType)
         {
 
-            if (vehicleType == "autobus" || vehicleType == "regionální autobus" || vehicleType == "noční autobus" || vehicleType == "náhradní doprava")
+            if (vehicleType == "autobus" || vehicleType == "regionální autobus" || vehicleType == "noční autobus" || vehicleType == "noční regionální autobus" || vehicleType == "náhradní doprava")
             {
                 Color color = Color.FromHex("#047aa9"); 
                 return color;
