@@ -29,8 +29,16 @@ namespace PID_API_App
             var current = Connectivity.NetworkAccess;
             if (current == NetworkAccess.Internet)
             {
-                GetAPIData();
-                Navigation.PushAsync(new MainMenu());
+                bool success = GetAPIData();
+
+                if (success == false)
+                {
+                    Navigation.PushAsync(new MainMenu());
+                }
+                else
+                {
+                    DisplayAlert("Chyba", "Nastala chyba při stahování dat ze serveru", "Ok");
+                }
             }
             else
             {
@@ -38,10 +46,20 @@ namespace PID_API_App
             }
         }
 
-        private void GetAPIData()
+        private bool GetAPIData()
         {
-            resourceData.MainMethod();
-            resourceData.DeseliazeJSON();
+            bool b = resourceData.MainMethod();
+
+            if (b == false)
+            {
+                resourceData.DeseliazeJSON();
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
         }
 
         private void btn_connection_Clicked(object sender, EventArgs e)

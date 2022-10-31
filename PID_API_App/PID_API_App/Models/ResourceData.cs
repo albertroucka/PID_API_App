@@ -18,7 +18,7 @@ namespace PID_API_App.Models
         public static List<Vehicle> boats = new List<Vehicle>();
         public Root response = null; public static DateTime lastUpdate;
 
-        public void MainMethod()
+        public bool MainMethod()
         {
             try
             {
@@ -35,10 +35,11 @@ namespace PID_API_App.Models
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                return true;
             }
 
             lastUpdate = DateTime.Now;
+            return false;
         }
 
         public async Task<string> DownloadData()
@@ -111,7 +112,7 @@ namespace PID_API_App.Models
             }
             else
             {
-                //null
+                //nemůže nastat
             }
         }
 

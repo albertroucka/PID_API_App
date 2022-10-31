@@ -57,7 +57,7 @@ namespace PID_API_App
             {
                 lv_allSortedLines.ItemsSource = sortedLines;
             }
-            else if (search[0] >= '0' && search[0] <= '9')
+            else
             {
                 foreach (AverageLine item in sortedLines)
                 {
@@ -67,11 +67,6 @@ namespace PID_API_App
                     }
                 }
 
-                lv_allSortedLines.ItemsSource = sortedLines; //Řešení pro Refresh ListView
-                lv_allSortedLines.ItemsSource = searchList;
-            }
-            else
-            {
                 foreach (AverageLine item in sortedLines)
                 {
                     if (item.AgencyName.ToString().Contains(search.ToUpper()))
